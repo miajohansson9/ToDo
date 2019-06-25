@@ -5,10 +5,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import org.apache.commons.io.FileUtils;
@@ -47,6 +49,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setUpListViewListener() {
+        lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                // Get the selected item text from ListView
+                String currentText = (String) parent.getItemAtPosition(position);
+
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
+                View mView = getLayoutInflater().inflate(R.layout.change_item, null);
+                final EditText mEditItem = (EditText) mView.findViewById(R.id.editTextItem);
+                mEditItem.setText(currentText);
+                Button mSave = mView.findViewById(R.id.save);
+
+                mBuilder.setView(mView);
+                final AlertDialog dialog = mBuilder.create();
+
+                mSave.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String updatedItem = (String) mEditItem.getText().toString();
+                        items.set(position, updatedItem);
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.show();
+                itemsAdapter.notifyDataSetChanged();
+                writeItems();
+            }
+        });
+
         lvItems.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
