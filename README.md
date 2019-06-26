@@ -21,11 +21,8 @@ The following **stretch** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-<p align="center">
-<img src='https://im2.ezgif.com/tmp/ezgif-2-0ec652b9e9db.gif' title='Video Walkthrough' width='300px' alt='Video Walkthrough' />
-</p>
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+<img src='https://media.giphy.com/media/UTdW7YixFG4CxYuxWF/giphy.gif' width='200px' />
 
 ## Notes
 
