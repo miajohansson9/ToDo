@@ -70,12 +70,12 @@ public class MainActivity extends AppCompatActivity {
                         String updatedItem = (String) mEditItem.getText().toString();
                         items.set(position, updatedItem);
                         dialog.dismiss();
+                        itemsAdapter.notifyDataSetChanged();
+                        writeItems();
                     }
                 });
 
                 dialog.show();
-                itemsAdapter.notifyDataSetChanged();
-                writeItems();
             }
         });
 
