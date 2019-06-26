@@ -25,8 +25,9 @@ The following **additional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
-
-<img src='https://im2.ezgif.com/tmp/ezgif-2-0ec652b9e9db.gif' title='Video Walkthrough' width='150px' style="margin: auto 0;" alt='Video Walkthrough' />
+<p align="center">
+<img src='https://im2.ezgif.com/tmp/ezgif-2-0ec652b9e9db.gif' title='Video Walkthrough' width='300px' alt='Video Walkthrough' />
+</p>
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
